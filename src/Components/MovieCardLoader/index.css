@@ -1,0 +1,53 @@
+.skeleton-loader {
+    width: 23%;
+    height: 350px;
+    background-color: #f0f0f0;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    animation: pulse 1.5s infinite ease-in-out;
+    margin-bottom: 1.5rem;
+}
+
+
+@media screen and (max-width: 768px) {
+    .skeleton-loader {
+        width: 100%;
+    }
+}
+
+.skeleton-poster {
+    width: 60%;
+    height: 250px;
+    margin-bottom: 0.7rem;
+    background-color: #ccc;
+}
+
+.skeleton-title {
+    width: 80%;
+    height: 20px;
+    margin-bottom: 8px;
+    background-color: #ccc;
+}
+
+.skeleton-rating {
+    width: 50%;
+    height: 20px;
+    background-color: #ccc;
+}
+
+@keyframes pulse {
+    0% {
+        opacity: 0.6;
+    }
+
+    50% {
+        opacity: 0.8;
+    }
+
+    100% {
+        opacity: 0.6;
+    }
+}

@@ -1,0 +1,55 @@
+.skeleton {
+    background-color: #f0f0f0;
+    animation: skeleton-loading 1.5s infinite ease-in-out;
+    height: 340px;
+}
+
+@keyframes skeleton-loading {
+    0% {
+        opacity: 0.3;
+    }
+
+    50% {
+        opacity: 0.8;
+    }
+
+    100% {
+        opacity: 0.3;
+    }
+}
+
+.skeleton-image {
+    width: 100%;
+    height: 200px;
+    flex-grow: 1;
+    background-color: #ccc;
+    /* Adjust height according to your design */
+}
+
+.skeleton-name {
+    width: 80%;
+    height: 20px;
+    /* Adjust height according to your design */
+    margin-bottom: 8px;
+    background-color: #ccc;
+    margin-top: 1rem;
+}
+
+.skeleton-character {
+    width: 60%;
+    height: 20px;
+    /* Adjust height according to your design */
+    background-color: #ccc;
+}
+
+.loader-cast-card {
+    width: 15%;
+    margin-bottom: 1.5rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.cast-image {
+    width: 100%;
+    object-fit: contain;
+}

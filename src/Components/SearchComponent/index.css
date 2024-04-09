@@ -1,0 +1,18 @@
+
+
+.no-results{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 40vh;
+    flex-direction: column;
+}
+
+.search-span{
+    color: blueviolet;
+}
+
+.try-again{
+    font-size: 1rem;
+    margin-top: 0px;
+}

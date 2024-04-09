@@ -1,0 +1,131 @@
+/* SkeletonLoader.css */
+.skeleton-top {
+    background-color: #f2f2f2;
+    /* border: 1px solid #ccc; */
+    width: 95%;
+    padding: 0.75rem;
+    margin: auto;
+    border-radius: 1rem;
+    margin-bottom: 1rem;
+    display: flex;
+    justify-content: space-between;
+    animation: skeletonLoading 1.5s ease infinite;
+}
+
+.movie-details.skeleton-top {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+}
+
+.skeleton-image {
+    width: 120px;
+    height: 180px;
+    /* Adjust height as needed */
+    background-color: #d8d8d8;
+    object-fit: contain;
+    margin-bottom: 0.7rem;
+}
+
+.skeleton-title {
+    width: 200px;
+    /* Adjust width as needed */
+    height: 24px;
+    /* Adjust height as needed */
+    background-color: #d8d8d8;
+    margin-bottom: 1rem;
+
+}
+.sk-detail{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.skeleton-rating {
+    width: 80px;
+    /* Adjust width as needed */
+    height: 16px;
+    /* Adjust height as needed */
+    background-color: #d8d8d8;
+    margin-bottom: 0.7rem;
+}
+
+.skeleton-runtime {
+    width: 160px;
+    /* Adjust width as needed */
+    height: 16px;
+    /* Adjust height as needed */
+    background-color: #d8d8d8;
+    margin-right: 8px;
+    margin-bottom: 0.7rem;
+}
+
+.skeleton-genres {
+    width: 100px;
+    /* Adjust width as needed */
+    height: 16px;
+    /* Adjust height as needed */
+    background-color: #d8d8d8;
+}
+
+.skeleton-release-date {
+    width: 100px;
+    /* Adjust width as needed */
+    height: 16px;
+    /* Adjust height as needed */
+    background-color: #d8d8d8;
+    margin-bottom: 0.7rem;
+}
+
+.skeleton-overview-head {
+    width: 150px;
+    /* Adjust width as needed */
+    height: 24px;
+    /* Adjust height as needed */
+    background-color: #d8d8d8;
+    margin: 0;
+    margin-bottom: 0.5rem;
+    font-size: 1.5rem;
+}
+
+.skeleton-overview-para {
+    width: 100%;
+    /* Adjust width as needed */
+    height: 16px;
+    /* Adjust height as needed */
+    background-color: #d8d8d8;
+    margin: 0;
+    margin-bottom: 0.5rem;
+}
+
+
+.skeleton-backdrop-poster{
+    width: 35%;
+    height: 300px;
+    object-fit: contain;
+    background-color: #ccc;
+}
+
+
+
+
+/* SkeletonLoader.css */
+@keyframes skeletonLoading {
+  0% {
+    background-color: #f2f2f2;
+  }
+  50% {
+    background-color: #e0e0e0;
+  }
+  100% {
+    background-color: #f2f2f2;
+  }
+}
+
+
+@media screen and (max-width:769px) {
+    .skeleton-backdrop-poster{
+        display: none;
+    }
+}

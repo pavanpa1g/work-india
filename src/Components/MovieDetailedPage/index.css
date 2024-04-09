@@ -1,0 +1,159 @@
+.backdrop-poster{
+    /* width: 100%; */
+    height: 20%;
+    object-fit: contain;
+}
+
+@media screen and (max-width:769px) {
+    .backdrop-poster{
+        display: none;
+    }
+    
+}
+
+.movie-detailed-bg-container{
+    padding:0px 1rem;
+    padding-top: 1rem;
+   
+}
+
+.top-container{
+    display: flex;
+    align-items: center;
+    /* justify-content: space-between; */
+    margin-bottom: 1rem;
+    border: 1px solid #ccc;
+    width: 95%;
+    padding: 0.75rem;
+    margin: auto;
+    border-radius: 1rem;
+}
+
+.movie-poster-detail{
+    width: 120px;
+    object-fit: contain;
+    margin-bottom: 0.7rem;
+}
+
+.runtime{
+    margin-right: 8px;
+}
+.cast{
+    margin-left: 1.2rem;
+}
+
+.movie-details{
+    display: flex;
+    gap: 1rem;
+}
+
+
+
+.overview-para{
+    width: 80%;
+    margin: 0;
+}
+
+
+.overview-head{
+    margin: 0;
+    margin-bottom: 0.5rem;
+    font-size: 1.5rem;
+}
+
+
+.cast-container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+.cast-card{
+    width: 15%;
+    margin-bottom: 2.5rem;
+    display: flex;
+    flex-direction: column;
+    /* justify-content: space-between; */
+}
+
+
+
+
+.cast-image{
+    width: 100%;
+    object-fit: contain;
+}
+
+.cast-name{
+    font-weight: 500;
+    font-size: 1.1rem;
+    margin: 0px;
+    margin-bottom: 0.2rem;
+    overflow: hidden;
+    margin-top: auto;
+}
+
+.cast-character{
+    margin: 0px;
+    overflow:  hidden;
+    text-overflow: ellipsis;
+}
+
+
+.failure-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+
+@media screen and (max-width:769px) {
+    .movie-details {
+        flex-direction: column;
+    }
+
+    .movie-poster-detail {
+        width: 100%;
+    }
+
+    .movie-title-dt {
+        font-size: 1rem;
+
+    }
+
+    .rating-dt {
+        font-size: 0.7rem;
+        margin-bottom: 0.25rem;
+    }
+
+    .overview-head {
+        font-size: 1rem;
+    }
+
+    .overview-para{
+        font-size: 0.7rem;
+    }
+}
+
+
+@media screen and (max-width:769px) {
+    .cast-container {
+        justify-content: space-between;
+    }
+
+    .cast-card {
+        width: 48%;
+    }
+
+    .cast-name {
+        font-size:0.9rem;
+        margin-top: 0px;
+    }
+
+    .cast-character{
+        font-size: 0.7rem;
+    }
+    
+
+}

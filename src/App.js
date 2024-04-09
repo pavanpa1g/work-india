@@ -1,24 +1,31 @@
-import logo from './logo.svg';
-import './App.css';
+import { Provider } from "react-redux";
+import { BrowserRouter as Router,Route,Routes } from "react-router-dom";
+import "./App.css";
+// import Home from "./Components/Home";
+import NavBar from "./Components/NavBar";
+import { store } from "./store/store";
+import Home from "./Components/Home";
+import TopRated from "./Components/TopRated";
+import UpComing from "./Components/UpComing";
+import MovieDetailedPage from "./Components/MovieDetailedPage";
+import NotFound from "./Components/NotFound";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Provider store={store}>
+      <div className="app-bg-container">
+        <Router>
+          <NavBar />
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/top-rated" element={<TopRated />} />
+            <Route path="/upcoming" element={<UpComing />} />
+            <Route path="/movie/:id" element={<MovieDetailedPage />} />
+            <Route element={<NotFound />} />
+          </Routes>
+        </Router>
+      </div>
+    </Provider>
   );
 }
 
