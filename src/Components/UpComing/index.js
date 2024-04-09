@@ -9,6 +9,7 @@ import Slider from "../Slider";
 import MovieCardLoader from "../MovieCardLoader";
 import SearchComponent from "../SearchComponent";
 import { setSearchInput } from "../../store/features/searchSlice";
+import { API_KEY } from "../../constants";
 
 const UpComing = () => {
   const [movies, setMovies] = useState([]);
@@ -22,7 +23,7 @@ const UpComing = () => {
 
   const loadAllImages = async (currentPage) => {
     setApiStatus(apiConstants.inProgress);
-    const url = `https://api.themoviedb.org/3/movie/upcoming?api_key=${process.env.REACT_APP_API_KEY}&language=en-US&page=${currentPage}`;
+    const url = `https://api.themoviedb.org/3/movie/upcoming?api_key=${API_KEY}&language=en-US&page=${currentPage}`;
     try {
       const response = await fetch(url);
       const data = await response.json();

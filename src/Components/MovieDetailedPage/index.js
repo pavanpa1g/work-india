@@ -9,6 +9,7 @@ import MovieDetailsTopLoader from "../MovieDetailsTopLoader";
 import { data } from "../../helper/data";
 import Slider from "../Slider";
 import SearchComponent from "../SearchComponent";
+import { API_KEY } from "../../constants";
 
 const apiConstants = {
   initial: "initial",
@@ -27,7 +28,7 @@ const MovieDetailedPage = () => {
 
   const fetchMovieDetails = async () => {
     setApiStatus(apiConstants.inProgress);
-    const api = `https://api.themoviedb.org/3/movie/${id}?api_key=${process.env.REACT_APP_API_KEY}&language=en-US`;
+    const api = `https://api.themoviedb.org/3/movie/${id}?api_key=${API_KEY}&language=en-US`;
 
     try {
       const response = await fetch(api);
@@ -47,7 +48,7 @@ const MovieDetailedPage = () => {
 
   const fetchMovieCastDetails = async () => {
     setCastApiStatus(apiConstants.inProgress);
-    const api = `https://api.themoviedb.org/3/movie/${id}/credits?api_key=${process.env.REACT_APP_API_KEY}&language=en-US`;
+    const api = `https://api.themoviedb.org/3/movie/${id}/credits?api_key=${API_KEY}&language=en-US`;
 
     try {
       const response = await fetch(api);

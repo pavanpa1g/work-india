@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import MovieCard from "../MovieCard";
 import { useSelector, useDispatch } from "react-redux";
-
+import {API_KEY} from "../../constants"
 import "./index.css";
 import MovieCardLoader from "../MovieCardLoader";
 import SearchComponent from "../SearchComponent";
@@ -21,7 +21,7 @@ const Home = () => {
 
   const loadAllImages = async (currentPage) => {
     setApiStatus(apiConstants.inProgress);
-    const url = `https://api.themoviedb.org/3/movie/popular?api_key=${process.env.REACT_APP_API_KEY}&language=en-US&page=${currentPage}`;
+    const url = `https://api.themoviedb.org/3/movie/popular?api_key=${API_KEY}&language=en-US&page=${currentPage}`;
 
     try {
       const response = await fetch(url);

@@ -6,6 +6,7 @@ import { useSelector } from "react-redux";
 
 import "./index.css";
 import MovieCardLoader from "../MovieCardLoader";
+import { API_KEY } from "../../constants";
 
 const apiConstants = {
   initial: "initial",
@@ -24,7 +25,7 @@ const SearchComponent = () => {
 
   const loadAllImages = async (currentPage) => {
     setApiStatus(apiConstants.inProgress);
-    const url = `https://api.themoviedb.org/3/search/movie?api_key=${process.env.REACT_APP_API_KEY}&language=en-US&query=${searchInput}&page=${currentPage}`;
+    const url = `https://api.themoviedb.org/3/search/movie?api_key=${API_KEY}&language=en-US&query=${searchInput}&page=${currentPage}`;
     try {
       const response = await fetch(url);
       const data = await response.json();
