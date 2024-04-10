@@ -198,15 +198,11 @@ const MovieDetailedPage = () => {
   };
 
   const slider = useSelector((state) => state.searchSlice.slideOpen);
-  const searchInput = useSelector((state) => state.searchSlice.searchInput);
+
 
   return (
     <div className="movie-detailed-bg-container">
       {slider && <Slider />}
-
-      {searchInput ? (
-        <SearchComponent />
-      ) : (
         <>
           {renderMovieDetails()}
 
@@ -214,7 +210,6 @@ const MovieDetailedPage = () => {
 
           {renderCast()}
         </>
-      )}
     </div>
   );
 };

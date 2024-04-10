@@ -6,7 +6,6 @@ import { Link } from "react-router-dom";
 const MovieCard = ({ movie }) => {
   const { poster_path, title, vote_average,id } = movie;
 
-  console.log("movie-card",movie)
   return (
     <Link to={`/movie/${id}`} className="movie-card-bg-container">
       <img

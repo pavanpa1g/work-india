@@ -16,7 +16,11 @@ const NavBar = () => {
   const dispatch = useDispatch();
 
   const handleSearchClick = () => {
-    dispatch(setSearchInput(inputValue));
+
+    // dispatch(setSearchInput(inputValue));
+    setInputValue("")
+    router(`/search/${inputValue}`)
+
   };
 
   const handleKeyDownEnter = (event) => {

@@ -78,13 +78,21 @@ const UpComing = () => {
       </div>
     );
   };
+        const renderFailure = () => {
+          return (
+            <div className="failure-container">
+              <p>Something went wrong. Please try again later</p>
+              <button onClick={loadAllImages}>Try Again</button>
+            </div>
+          );
+        };
 
   const renderMovies = () => {
     switch (apiStatus) {
       case apiConstants.success:
         return renderSuccess();
       case apiConstants.failure:
-        return <div>Something went wrong. Please try again later</div>;
+        return renderFailure()
       case apiConstants.inProgress:
         return renderInProgress();
       default:
@@ -97,7 +105,7 @@ const UpComing = () => {
   return (
     <div className="home-bg-container">
       {slider && <Slider />}
-      {searchInput ? <SearchComponent /> : renderMovies()}
+      {renderMovies()}
     </div>
   );
 };

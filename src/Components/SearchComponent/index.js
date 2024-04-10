@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 
 import MovieCard from "../MovieCard";
-
+import {useLocation} from "react-router-dom"
 import { useSelector } from "react-redux";
 
 import "./index.css";
@@ -19,6 +19,10 @@ const apiConstants = {
 const SearchComponent = () => {
   const [movies, setMovies] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
+  const [pathName,setPathName] = useState("")
+
+  const params = useLocation()
+  
 
   const [apiStatus, setApiStatus] = useState(apiConstants.initial);
 
@@ -26,7 +30,9 @@ const SearchComponent = () => {
 
   const loadAllImages = async (currentPage) => {
     setApiStatus(apiConstants.inProgress);
-    const url = `https://api.themoviedb.org/3/search/movie?api_key=${API_KEY}&language=en-US&query=${searchInput}&page=${currentPage}`;
+    const url = `https://api.themoviedb.org/3/search/movie?api_key=${API_KEY}&language=en-US&query=${params.pathname.slice(
+      8
+    )}&page=${currentPage}`;
     try {
       const response = await fetch(url);
       const data = await response.json();
@@ -43,8 +49,9 @@ const SearchComponent = () => {
     }
   };
   useEffect(() => {
+    setPathName(params.pathname.slice(8));
     loadAllImages(currentPage);
-  }, [currentPage, searchInput]);
+  }, [currentPage, searchInput, params.pathname]);
 
   useEffect(() => {
     setCurrentPage(1);
@@ -59,7 +66,6 @@ const SearchComponent = () => {
       <div>
         <div className="movie-card-container">
           {movies.results.map((movie) => {
-            console.log("movie",movie)
             return <MovieCard key={movie.id} movie={movie} />;
           })}
         </div>
@@ -77,7 +83,7 @@ const SearchComponent = () => {
           <div className="no-results">
             <h3>
               No movies were found for the search{" "}
-              <span className="search-span">{searchInput}</span>
+              <span className="search-span">{pathName}</span>
             </h3>
             <p className="try-again">Please try a different search term</p>
           </div>

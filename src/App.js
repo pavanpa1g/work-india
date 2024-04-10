@@ -9,6 +9,7 @@ import TopRated from "./Components/TopRated";
 import UpComing from "./Components/UpComing";
 import MovieDetailedPage from "./Components/MovieDetailedPage";
 import NotFound from "./Components/NotFound";
+import SearchComponent from "./Components/SearchComponent";
 
 function App() {
   return (
@@ -21,7 +22,9 @@ function App() {
             <Route path="/top-rated" element={<TopRated />} />
             <Route path="/upcoming" element={<UpComing />} />
             <Route path="/movie/:id" element={<MovieDetailedPage />} />
+            <Route path="/search/:search" element={<SearchComponent />} />
             <Route element={<NotFound />} />
+
           </Routes>
         </Router>
       </div>
