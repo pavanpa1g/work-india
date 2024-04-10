@@ -1,13 +1,14 @@
 import React, { useEffect, useState } from "react";
 
 import MovieCard from "../MovieCard";
-import {useLocation} from "react-router-dom"
+import { useLocation } from "react-router-dom";
 import { useSelector } from "react-redux";
 
 import "./index.css";
 import MovieCardLoader from "../MovieCardLoader";
 import { API_KEY } from "../../constants";
 import Pagination from "../Pagination";
+import Slider from "../Slider";
 
 const apiConstants = {
   initial: "initial",
@@ -19,10 +20,9 @@ const apiConstants = {
 const SearchComponent = () => {
   const [movies, setMovies] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
-  const [pathName,setPathName] = useState("")
+  const [pathName, setPathName] = useState("");
 
-  const params = useLocation()
-  
+  const params = useLocation();
 
   const [apiStatus, setApiStatus] = useState(apiConstants.initial);
 
@@ -142,7 +142,14 @@ const SearchComponent = () => {
     }
   };
 
-  return <div className="home-bg-container">{renderMovies()}</div>;
+  const slider = useSelector((state) => state.searchSlice.slideOpen);
+
+  return (
+    <div className="home-bg-container">
+      {slider && <Slider />}
+      {renderMovies()}
+    </div>
+  );
 };
 
 export default SearchComponent;

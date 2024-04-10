@@ -16,7 +16,6 @@ const NavBar = () => {
   const dispatch = useDispatch();
 
   const handleSearchClick = () => {
-
     // dispatch(setSearchInput(inputValue));
     setInputValue("")
     router(`/search/${inputValue}`)
