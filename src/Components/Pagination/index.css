@@ -1,0 +1,38 @@
+.pagination-bg-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.button{
+    cursor: pointer;
+}
+
+
+.prev-next-buttons {
+    padding: 0 1rem;
+    border-radius: 0.2rem;
+    border: 1px solid #ccc;
+    cursor: pointer;
+}
+
+
+.prev-next-buttons:hover {
+    background-color: #ccc;
+}
+
+.prev-next-icon-buttons{
+    display: none;
+}
+
+@media screen and (max-width:769px) {
+    .prev-next-buttons{
+        display: none;
+    }
+
+    .prev-next-icon-buttons{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+}

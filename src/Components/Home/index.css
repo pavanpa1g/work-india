@@ -26,17 +26,7 @@
 }
 
 
-.buttons{
-    padding: 0 1rem;
-    border-radius: 0.2rem;
-    border:1px solid #ccc;
-    cursor: pointer;
-}
 
-
-.buttons:hover{
-    background-color: #ccc;
-}
 
 .span{
     margin: 0px 1rem;

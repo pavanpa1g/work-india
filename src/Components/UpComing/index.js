@@ -10,6 +10,7 @@ import MovieCardLoader from "../MovieCardLoader";
 import SearchComponent from "../SearchComponent";
 import { setSearchInput } from "../../store/features/searchSlice";
 import { API_KEY } from "../../constants";
+import Pagination from "../Pagination";
 
 const UpComing = () => {
   const [movies, setMovies] = useState([]);
@@ -58,23 +59,11 @@ const UpComing = () => {
           })}
         </div>
         <div className="pagination-container">
-          <button
-            disabled={currentPage === 1}
-            onClick={() => handlePageChange(currentPage - 1)}
-            className="buttons"
-          >
-            Previous
-          </button>
-          <span className="span">
-            {currentPage} of {totalPages}
-          </span>
-          <button
-            disabled={currentPage === totalPages}
-            onClick={() => handlePageChange(currentPage + 1)}
-            className="buttons"
-          >
-            Next
-          </button>
+          <Pagination
+            totalPages={500}
+            onPageChange={handlePageChange}
+            currentPage={currentPage}
+          />
         </div>
       </div>
     );

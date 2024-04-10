@@ -8,6 +8,7 @@ import SearchComponent from "../SearchComponent";
 import { apiConstants, loadData } from "../../helper/data";
 import Slider from "../Slider";
 import { setSearchInput } from "../../store/features/searchSlice";
+import Pagination from "../Pagination";
 
 const Home = () => {
   const [movies, setMovies] = useState([]);
@@ -57,23 +58,11 @@ const Home = () => {
           })}
         </div>
         <div className="pagination-container">
-          <button
-            disabled={currentPage === 1}
-            onClick={() => handlePageChange(currentPage - 1)}
-            className="buttons"
-          >
-            Previous
-          </button>
-          <span className="span">
-            {currentPage} of {totalPages}
-          </span>
-          <button
-            disabled={currentPage === totalPages}
-            onClick={() => handlePageChange(currentPage + 1)}
-            className="buttons"
-          >
-            Next
-          </button>
+          <Pagination
+            totalPages={500}
+            onPageChange={handlePageChange}
+            currentPage={currentPage}
+          />
         </div>
       </div>
     );
@@ -103,6 +92,9 @@ const Home = () => {
   };
 
   const slider = useSelector((state) => state.searchSlice.slideOpen);
+
+
+  
 
   return (
     <div className="home-bg-container">

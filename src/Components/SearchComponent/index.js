@@ -7,6 +7,7 @@ import { useSelector } from "react-redux";
 import "./index.css";
 import MovieCardLoader from "../MovieCardLoader";
 import { API_KEY } from "../../constants";
+import Pagination from "../Pagination";
 
 const apiConstants = {
   initial: "initial",
@@ -63,23 +64,11 @@ const SearchComponent = () => {
         </div>
         {movies.results.length > 0 && (
           <div className="pagination-container">
-            <button
-              disabled={currentPage === 1}
-              onClick={() => handlePageChange(currentPage - 1)}
-              className="buttons"
-            >
-              Previous
-            </button>
-            <span className="span">
-              {currentPage} of {movies.total_pages}
-            </span>
-            <button
-              disabled={currentPage === movies.total_pages}
-              onClick={() => handlePageChange(currentPage + 1)}
-              className="buttons"
-            >
-              Next
-            </button>
+            <Pagination
+              totalPages={movies.total_pages}
+              onPageChange={handlePageChange}
+              currentPage={currentPage}
+            />
           </div>
         )}
 
