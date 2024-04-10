@@ -60,7 +60,7 @@ const UpComing = () => {
         </div>
         <div className="pagination-container">
           <Pagination
-            totalPages={500}
+            totalPages={movies.total_pages}
             onPageChange={handlePageChange}
             currentPage={currentPage}
           />

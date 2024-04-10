@@ -85,3 +85,17 @@ export  const data = [
     id: 10,
   },
 ];
+
+
+
+
+export const formatDate = (inputDate) => {
+  const date = new Date(inputDate);
+  const formattedDate = date.toLocaleDateString("en-US", {
+    weekday: "short",
+    month: "short",
+    day: "2-digit",
+    year: "numeric",
+  });
+  return formattedDate;
+};

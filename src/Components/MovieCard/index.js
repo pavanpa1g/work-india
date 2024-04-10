@@ -6,6 +6,7 @@ import { Link } from "react-router-dom";
 const MovieCard = ({ movie }) => {
   const { poster_path, title, vote_average,id } = movie;
 
+  console.log("movie-card",movie)
   return (
     <Link to={`/movie/${id}`} className="movie-card-bg-container">
       <img
@@ -14,7 +15,7 @@ const MovieCard = ({ movie }) => {
         className="movie-poster"
       />
       <div className="movie-card-content-container">
-        <p className="title">{title.lengnth> 40 ? title.substr(0, 0) + "..." : title}</p>
+        <p className="title">{title.length> 40 ? title.substr(0, 0) + "..." : title}</p>
         <p className="rating">Rating: {vote_average}</p>
       </div>
     </Link>

@@ -1,15 +1,15 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import {useSelector} from "react-redux"
-
+import { useSelector, useDispatch } from "react-redux";
 
 import "./index.css";
 import CastCardLoader from "../CastCardLoader";
 import MovieDetailsTopLoader from "../MovieDetailsTopLoader";
-import { data } from "../../helper/data";
+import { data, formatDate } from "../../helper/data";
 import Slider from "../Slider";
 import SearchComponent from "../SearchComponent";
 import { API_KEY } from "../../constants";
+import { setSearchInput } from "../../store/features/searchSlice";
 
 const apiConstants = {
   initial: "initial",
@@ -45,6 +45,12 @@ const MovieDetailedPage = () => {
       setApiStatus(apiConstants.failure);
     }
   };
+
+  const dispatch = useDispatch()
+
+  useEffect(()=>{
+    dispatch(setSearchInput(""))
+  },[])
 
   const fetchMovieCastDetails = async () => {
     setCastApiStatus(apiConstants.inProgress);
@@ -150,7 +156,9 @@ const MovieDetailedPage = () => {
                     </span>
                   );
                 })}
-              <p className="rating-dt">{movieDetails.release_date}</p>
+              <p className="rating-dt">
+                Release Date:- {formatDate(movieDetails.release_date)}
+              </p>
             </div>
           </div>
           <div>

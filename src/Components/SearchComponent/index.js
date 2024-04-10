@@ -59,6 +59,7 @@ const SearchComponent = () => {
       <div>
         <div className="movie-card-container">
           {movies.results.map((movie) => {
+            console.log("movie",movie)
             return <MovieCard key={movie.id} movie={movie} />;
           })}
         </div>

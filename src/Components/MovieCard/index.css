@@ -13,7 +13,12 @@
     box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
     text-decoration: none;
     /* justify-content: space-between; */
+    transition: transform 80ms ease-in-out;
 
+}
+
+.movie-card-bg-container:hover {
+    transform: scale(1.01);
 }
 
 @media screen and (max-width:769px) {
@@ -26,6 +31,10 @@
     width: 100%;
     object-fit: contain;
     margin-bottom: 0.7rem;
+}
+
+.movie-poster:hover{
+   filter: blur(10%);
 }
 
 .title{
