@@ -18,6 +18,7 @@ const Pagination = ({ totalPages, onPageChange, currentPage }) => {
         Previous
       </button>
       <button
+        disabled={currentPage === 1}
         className="prev-next-icon-buttons"
         onClick={() => handlePageChange(currentPage - 1)}
       >
@@ -51,6 +52,7 @@ const Pagination = ({ totalPages, onPageChange, currentPage }) => {
       })}
 
       <button
+        disabled={currentPage === totalPages}
         className="prev-next-icon-buttons"
         onClick={() => handlePageChange(currentPage + 1)}
       >
