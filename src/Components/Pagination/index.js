@@ -22,7 +22,7 @@ const Pagination = ({ totalPages, onPageChange, currentPage }) => {
         className="prev-next-icon-buttons"
         onClick={() => handlePageChange(currentPage - 1)}
       >
-        <AiFillCaretLeft color="#000" size={20} />
+        <AiFillCaretLeft color={currentPage === 1 ? "#ccc" : "#000"} size={20} />
       </button>
       {[...Array(totalPages).keys()].map((page) => {
         if (
@@ -56,7 +56,7 @@ const Pagination = ({ totalPages, onPageChange, currentPage }) => {
         className="prev-next-icon-buttons"
         onClick={() => handlePageChange(currentPage + 1)}
       >
-        <AiFillCaretRight color="#000" size={20} />
+        <AiFillCaretRight color={currentPage === totalPages ? "#ccc" : "#000"} size={20}  />
       </button>
 
       <button
